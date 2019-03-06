@@ -1,0 +1,8 @@
+pymongo
+requests
+Scrapy
+scrapy-redis
+scrapy-splash
+scrapyd
+toml
+fake-useragent
