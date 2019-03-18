@@ -5,7 +5,7 @@ LABEL maintainer=ilpan:<pna.dev@outlook.com>
 COPY ./requirements.txt /tmp/requirements.txt
 
 ENV PY_VERSION=3.6
-ENV SITE_PACKAGES=/usr/local/local/lib/python${PY_VERSION}/site-packages
+ENV SITE_PACKAGES=/usr/local/lib/python${PY_VERSION}/site-packages
 
 # add build deps
 RUN apk add --no-cache --virtual .build-deps \
@@ -17,7 +17,8 @@ RUN apk add --no-cache --virtual .build-deps \
         libxslt-dev
 
 # install requirements
-RUN pip install -r /tmp/requirements.txt \
+RUN pip install -U pip \
+        && pip install -r /tmp/requirements.txt \
         && rm /tmp/requirements.txt \
         && rm -r ${SITE_PACKAGES}/*.dist-info
  
