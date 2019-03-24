@@ -6,4 +6,4 @@ scrapy-splash
 scrapyd
 toml
 fake-useragent
-scrapy-prometheus-exporter
+scraprom
