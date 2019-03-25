@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  scrapyd:
+    image: netflame/scrapyd
+    container_name: scrapyd
+    ports: 
+      - '6800:6800'   # for scrapyd
+      - '3590:3590'   # for scraprom exporter
+    networks:
+      - netflame
+      - wwatch
+
+networks:
+  netflame:
+    name: netflame-net
+    external: true
+  wwatch:
+    name: wwatch-net
+    external: true
