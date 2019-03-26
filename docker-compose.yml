@@ -5,7 +5,6 @@ services:
     container_name: scrapyd
     ports: 
       - '6800:6800'   # for scrapyd
-      - '3590:3590'   # for scraprom exporter
     networks:
       - netflame
       - wwatch
